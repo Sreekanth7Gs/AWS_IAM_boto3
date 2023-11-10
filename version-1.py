@@ -17,9 +17,14 @@ for user in users:
         ],
         MaxResults=1
     )
-    
-    last_login_times[user_name] = response['Events'][0]['EventTime'] if response.get('Events') else "N/A"
+ 
+    if response.get('Events'):
+       last_login_times[user_name] = response['Events'][0]['EventTime']
+    else:
+       last_login_times[user_name] = "N/A"
+
 
 for user_name, last_login_time in last_login_times.items():
     print("\n")
     print(f"User Name: {user_name}, Last Login Time: {last_login_time}")
+    print('\n')
