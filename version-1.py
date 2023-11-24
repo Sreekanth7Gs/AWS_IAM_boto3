@@ -25,6 +25,5 @@ for user in users:
 
 
 for user_name, last_login_time in last_login_times.items():
-    print("\n")
     print(f"User Name: {user_name}, Last Login Time: {last_login_time}")
     print('\n')
